@@ -28,6 +28,20 @@ router.get('/', async (req: Request, res: Response) => {
   }
 });
 
+// Get a single tool by ID
+router.get('/:id', async (req: Request, res: Response) => {
+  try {
+    const tool = await Tool.findById(req.params.id);
+    if (!tool) {
+      return res.status(404).json({ message: 'Outil non trouvé' });
+    }
+    res.json(tool);
+  } catch (err: any) {
+    logger.error(`Error fetching tool ${req.params.id}:`, err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Increment click count for today
 router.post('/:id/click', async (req: Request, res: Response) => {
   try {

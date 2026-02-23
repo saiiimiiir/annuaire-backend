@@ -1,5 +1,5 @@
 module.exports = {
-  apps : [{
+  apps: [{
     name: 'annuaire-backend',
     cwd: './backend',
     script: 'npm',
@@ -19,20 +19,5 @@ module.exports = {
     autorestart: true,
     watch: false,
     max_memory_restart: '1G'
-  }, {
-    name: 'annuaire-frontend',
-    cwd: './frontend',
-    script: 'npm',
-    args: 'start',
-    env_production: {
-      NODE_ENV: 'production',
-      PORT: 3000
-    },
-    log_date_format: "YYYY-MM-DD HH:mm:ss",
-    error_file: "./frontend/logs/pm2-error.log",
-    out_file: "./frontend/logs/pm2-out.log",
-    merge_logs: true,
-    autorestart: true,
-    watch: false
   }]
 };
