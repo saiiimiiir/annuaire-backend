@@ -22,7 +22,7 @@ app.use(express.json());
 app.use('/api/tools', toolRoutes);
 
 // MongoDB connection
-const mongoURI = 'mongodb://saiiimiiir:DJ%24m3b310@localhost:27017/annuaire?authSource=admin';
+const mongoURI = 'mongodb://saiiimiiir:DJ%24m3b310@127.0.0.1:27017/annuaire?authSource=admin';
 mongoose.connect(mongoURI)
   .then(() => logger.info('MongoDB connected'))
   .catch(err => logger.error('MongoDB connection error:', err));
